@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
+    <title>ToDo list</title>
     <!-- FontAwesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="app">
+        <header><h1>My ToDo List</h1></header>
+        <main>
+            <input class="input" type="text" placeholder="inserisci il tuo evento">
+            <button class="button">Inserisci</button>
+            <ul class="lista">
+
+            </ul>
+        </main>
+    </div>
+
+    <!-- Template handlebars -->
+    <script id="entry-template" type="text/x-handlebars-template">
+        <li>
+            {{testo}}
+            <span class="delete" data-id="{{id}}"><i class="far fa-window-close"></i></span>
+        </li>
+    </script>
 
     <!-- JS, jQuery, Handlebars -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
