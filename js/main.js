@@ -22,6 +22,12 @@ $(document).ready(function () {
         rimuoviTodo($(this), apiUrl,template);
     }); //fine click su span.delete
 
+    $('body').on('click', '.modifica', function() {
+        modificaTodo($(this),apiUrl, template )
+        
+    }); //fine click su modifica
+
+
 }); //<-- End ready
 
 //Funzioni 
@@ -85,3 +91,25 @@ function rimuoviTodo( self , apiUrl,template) {
         }
     }); //fine chiamata ajax
  } // fine funzione rimuovi todo
+
+//Funzione per modifica todo
+ function modificaTodo(self, apiUrl, template) {
+    var valore = self.prev('.testo-modif').val();
+    var item = self.next().data('id');
+    
+    $.ajax({
+        url: apiUrl + '/' + item,
+        method: 'PATCH',
+        data: {
+            text: valore,
+        },
+        success: function() {
+            print(apiUrl, template);
+        }
+            
+        ,
+        error: function() {
+            alert('ERRORE modifica')
+        }
+    }); // Fine ajax
+ } //Fine funzione modifica Todo
