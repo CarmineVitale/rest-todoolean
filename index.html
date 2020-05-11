@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo list</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'/>
     <link rel="stylesheet" href="css/style.css">
@@ -11,10 +12,12 @@
 <body>
     <div class="app">
         <header><h1>My ToDo List</h1></header>
-        <main>
-            <input class="input" type="text" placeholder="inserisci il tuo evento">
-            <button class="button">Inserisci</button>
-            <ul class="lista">
+        <main class="margine">
+            <div class="inserimento">
+                <input class="input" type="text" placeholder="Inserisci il tuo evento">
+                <button class="button">Inserisci</button>
+            </div>
+            <ul class="lista margine">
 
             </ul>
         </main>
@@ -23,7 +26,9 @@
     <!-- Template handlebars -->
     <script id="entry-template" type="text/x-handlebars-template">
         <li>
-            {{testo}}
+            <span class="testo">
+                {{testo}}
+            </span> 
             <span class="delete" data-id="{{id}}"><i class="far fa-window-close"></i></span>
         </li>
     </script>
